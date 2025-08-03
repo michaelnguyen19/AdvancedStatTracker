@@ -5,3 +5,7 @@ body {
 .description {
   background-color: white;
 }
+
+p {
+  background-color: red;
+}
