@@ -3,13 +3,16 @@ body {
 }
 
 .description {
-  background-color: white;
+  background-color: lightblue;
+  color: white;
 }
 
 h1 {
   background-color: lightblue;
+  color: white;
 }
 
 .court_locations {
-  background-color: white;
+  background-color: lightblue;
+  color: white;
 }
