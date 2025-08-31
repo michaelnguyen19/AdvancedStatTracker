@@ -24,3 +24,22 @@ h1 {
   color: white;
   border-radius: 4px;
 }
+
+#popUp {
+  display: block;
+  background-color: red;
+  padding: 10px;
+  position: fixed;
+  left: 100px;
+  top: 200px;
+  width: 170px;
+  height: 170px;
+}
+
+#close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+
+}
