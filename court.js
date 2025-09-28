@@ -96,7 +96,7 @@ function drawCourt() {
 
     // Hoops
     const hoopOffset = margin + 5; // closer to baseline
-    const hoopRadius = Math.max(4, Math.min(width,height) * 0.012);
+    const hoopRadius = Math.max(4, Math.min(width,height) * 0.025);
     // left hoop center (near left baseline)
     ctx.strokeStyle = accent;
     ctx.lineWidth = Math.max(1, Math.round(Math.min(width,height) * 0.006));
@@ -157,7 +157,7 @@ function drawThreePointArc(ctx, margin, centerY, width, height) {
     // right arc
     const rightCenterX = width - leftCenterX;
     ctx.beginPath();
-    ctx.arc(rightCenterX, centerY, radius, Math.PI - Math.PI/6, Math.PI + Math.PI/6, false);
+    ctx.arc(rightCenterX, centerY, radius, Math.PI - Math.PI/2, Math.PI + Math.PI/2, false);
     ctx.stroke();
     ctx.restore();
 }
