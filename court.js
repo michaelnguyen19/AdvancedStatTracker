@@ -69,7 +69,7 @@ function drawCourt() {
     // Center line and circle
     const centerX = width/2;
     const centerY = height/2;
-    const centerRadius = height * 0.09;
+    const centerRadius = height * 0.12;
 
 
     ctx.beginPath();
@@ -125,14 +125,14 @@ function drawKey(ctx, x, y, w, h, left) {
     ctx.beginPath();
     ctx.rect(x, (ctx.canvas.height / (window.devicePixelRatio||1) - h)/2, w, h);
     ctx.strokeStyle = '#ffffff';
-    ctx.lineWidth = Math.max(1, Math.round(Math.min(x+w,h) * 0.008));
+    ctx.lineWidth = Math.max(1, Math.round(Math.min(x+w,h) * 0.02));
     ctx.stroke();
 
 
     // Free-throw circle
-    const circleX = left ? x + w - (w*0.15) : x + (w*0.15);
+    const circleX = left ? x + w - (w*0.01) : x + (w*0.01);
     const circleY = ctx.canvas.height / (window.devicePixelRatio||1) / 2;
-    const r = h * 0.22;
+    const r = h * 0.5;
     ctx.beginPath();
     ctx.arc(circleX, circleY, r, 0, Math.PI*2);
     ctx.stroke();
@@ -146,11 +146,11 @@ function drawThreePointArc(ctx, margin, centerY, width, height) {
 
 
     // approximate three point radius as proportion of court height
-    const radius = height * 0.38;
+    const radius = height * 0.4;
     // left arc center is near left baseline
-    const leftCenterX = margin + Math.min(width,height) * 0.04 + (Math.min(width,height) * 0.01);
+    const leftCenterX = margin - 20 + Math.min(width,height) * 0.04 + (Math.min(width,height) * 0.01);
     ctx.beginPath();
-    ctx.arc(leftCenterX, centerY, radius, -Math.PI/6, Math.PI/6, false);
+    ctx.arc(leftCenterX, centerY, radius, -Math.PI/2, Math.PI/2, false);
     ctx.stroke();
 
 
