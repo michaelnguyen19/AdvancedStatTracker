@@ -77,6 +77,11 @@ function drawCourt() {
     ctx.lineTo(centerX, height - margin);
     ctx.stroke();
 
+    ctx.beginPath();
+    ctx.moveTo(width*0.01, centerY*0.28);
+    ctx.lineTo(width*0.066, centerY*0.28);
+    ctx.stroke();
+
 
     ctx.beginPath();
     ctx.arc(centerX, centerY, centerRadius, 0, Math.PI*2);
@@ -148,7 +153,8 @@ function drawThreePointArc(ctx, margin, centerY, width, height) {
     // approximate three point radius as proportion of court height
     const radius = height * 0.4;
     // left arc center is near left baseline
-    const leftCenterX = margin - 20 + Math.min(width,height) * 0.04 + (Math.min(width,height) * 0.01);
+    const marginThreePt = margin - margin*2.7
+    const leftCenterX = marginThreePt + Math.min(width,height) * 0.04 + (Math.min(width,height) * 0.01);
     ctx.beginPath();
     ctx.arc(leftCenterX, centerY, radius, -Math.PI/2, Math.PI/2, false);
     ctx.stroke();
