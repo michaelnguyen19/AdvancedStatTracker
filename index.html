@@ -26,7 +26,7 @@
   
   <div class="wrap">
     <div class="card">
-      <canvas id="court"></canvas>
+      <canvas id="court" onclick="onClick()"></canvas>
       <div class="controls">
         <label>Scale</label>
         <input id="scale" type="range" min="0.6" max="1.6" step="0.01" value="1">
@@ -34,6 +34,46 @@
       </div>
     </div>
   </div>
+
+  <script src="script.js">
+
+  </script>
+
+  <script src = "draggablediv.js" defer>
+
+  </script>
+
+  <div class="pop-up" id="popUp">
+    <div id = "mydivheader">  Click here to move </div>
+    <div class="popup" id="myPopup">
+      <span class="close-button" id="closePopup">&times;</span>
+      <div class="popup-content"> 
+        <h2>
+          Welcome!
+        </h2>
+        <form id = "shotEvent">
+          <input id = "player" type="number"> <label for="player">player</label>
+
+          <input type = "radio" name = "made/miss" value="1"><label for="made">made</label>
+          
+          <input type = "radio" name = "made/miss" value="2"><label for="miss">miss</label>
+
+          <input id = "defender" type="number"> <label for="defender">defender</label>
+
+          
+
+        </form>
+        <button>
+          Learn More
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <button id="OpenPopup" >
+  </button>
+
+  <canvas onClick
 
 
 

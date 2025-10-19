@@ -60,7 +60,7 @@ function drawCourt() {
 
     // Court boundary (sidelines)
     const margin = Math.min(width, height) * 0.02;
-    ctx.lineWidth = Math.max(1, Math.round(Math.min(width,height) * 0.008));
+    ctx.lineWidth = Math.max(1, Math.round(Math.min(width,height) * 0.006));
     ctx.strokeStyle = line;
     roundRect(ctx, margin, margin, width - margin*2, height - margin*2, 6);
     ctx.stroke();
@@ -78,10 +78,16 @@ function drawCourt() {
     ctx.stroke();
 
     ctx.beginPath();
-    ctx.moveTo(width*0.01, centerY*0.28);
-    ctx.lineTo(width*0.066, centerY*0.28);
+    //3pt lines, corner
+    ctx.moveTo(width*0.01, centerY*0.24);
+    ctx.lineTo(width*0.075, centerY*0.24);
     ctx.stroke();
 
+    ctx.beginPath();
+    //3pt lines, corner
+    ctx.moveTo(width*0.01, centerY*1.758);
+    ctx.lineTo(width*0.075, centerY*1.758);
+    ctx.stroke();
 
     ctx.beginPath();
     ctx.arc(centerX, centerY, centerRadius, 0, Math.PI*2);
@@ -156,7 +162,7 @@ function drawThreePointArc(ctx, margin, centerY, width, height) {
     const marginThreePt = margin - margin*2.7
     const leftCenterX = marginThreePt + Math.min(width,height) * 0.04 + (Math.min(width,height) * 0.01);
     ctx.beginPath();
-    ctx.arc(leftCenterX, centerY, radius, -Math.PI/2, Math.PI/2, false);
+    ctx.arc(leftCenterX, centerY, radius, -Math.PI/2.5, Math.PI/2.5, false);
     ctx.stroke();
 
 
