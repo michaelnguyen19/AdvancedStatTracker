@@ -85,8 +85,20 @@ function drawCourt() {
 
     ctx.beginPath();
     //3pt lines, corner
-    ctx.moveTo(width*0.01, centerY*1.758);
-    ctx.lineTo(width*0.075, centerY*1.758);
+    ctx.moveTo(width*0.01, centerY*1.7593);
+    ctx.lineTo(width*0.075, centerY*1.7593);
+    ctx.stroke();
+
+    ctx.beginPath();
+    //3pt lines, corner
+    ctx.moveTo(width*0.925, centerY*1.7593);
+    ctx.lineTo(width*0.99, centerY*1.7593);
+    ctx.stroke();
+
+    ctx.beginPath();
+    //3pt lines, corner
+    ctx.moveTo(width*0.925, centerY*0.24);
+    ctx.lineTo(width*0.99, centerY*0.24);
     ctx.stroke();
 
     ctx.beginPath();
@@ -169,7 +181,7 @@ function drawThreePointArc(ctx, margin, centerY, width, height) {
     // right arc
     const rightCenterX = width - leftCenterX;
     ctx.beginPath();
-    ctx.arc(rightCenterX, centerY, radius, Math.PI - Math.PI/2, Math.PI + Math.PI/2, false);
+    ctx.arc(rightCenterX, centerY, radius, Math.PI - Math.PI/2.5, Math.PI + Math.PI/2.5, false);
     ctx.stroke();
     ctx.restore();
 }
