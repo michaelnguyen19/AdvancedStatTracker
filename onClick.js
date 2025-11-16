@@ -6,6 +6,8 @@ function getMousePosition(canvas, event) {
     console.log("Coordinate x: " + x, "Coordinate y:" + y);
 
     let d = getDistance(x, y);
+    let dist_Left = d[0];
+    let dist_Right = d[1];
 
     const scaleInput = document.getElementById('scale');
 
@@ -18,16 +20,32 @@ function getMousePosition(canvas, event) {
     const width = Math.round(baseWidth * scale);
     const height = Math.round(width / COURT_RATIO);
 
+    const scaledX = x;
+    const centerX = width/2;
 
-    if ( (y / height) < 0.104 || (y/height) > 0.89 ) {
-        console.log("3 point shot");
-    }
-    else if (d < 0.233) {
-        console.log("2 point shot");
+    if (scaledX < centerX) {
+        if ( (y / height) < 0.104 || (y/height) > 0.89 ) {
+            console.log("3 point shot");
+        }
+        else if (dist_Left < 0.233) {
+            console.log("2 point shot");
+        }
+        else {
+            console.log("3 point shot");
+        }
     }
     else {
-        console.log("3 point shot");
+        if ( (y / height) < 0.104 || (y/height) > 0.89 ) {
+            console.log("3 point shot");
+        }
+        else if (dist_Right < 0.233) {
+            console.log("2 point shot");
+        }
+        else {
+            console.log("3 point shot");
+        }
     }
+        
 
     console.log("Distance: " + d);
     console.log(y / height);
@@ -57,12 +75,21 @@ function getDistance(x, y) {
     const scaledX = x;
     const scaledY = y;
 
-    const x1 = Math.pow(scaledX+20, 2);
-    const y1 = Math.pow(scaledY-height/2, 2);
+    const x_Left = Math.pow(scaledX+20, 2);
+    const y_Left = Math.pow(scaledY-height/2, 2);
 
-    const dist = Math.sqrt(x1 + y1);
+    const dist_Left = Math.sqrt(x_Left + y_Left);
 
-    return dist / scale / baseWidth;
+    const x_Right = Math.pow(scaledX-(width-20), 2);
+    const y_Right = Math.pow(scaledY-height/2, 2);
+
+    const dist_Right = Math.sqrt(x_Right + y_Right);
+
+    return [
+        dist_Left / scale / baseWidth,
+        dist_Right / scale / baseWidth,
+    ]
+    
 }
 
 
