@@ -12,7 +12,7 @@ function dragElement(elmnt) {
 
     function dragMouseDown(e) {
         e = e || window.event;
-        e.preventDefault(); //preventDefault prevents the predicted action from happening
+        //e.preventDefault(); //preventDefault prevents the predicted action from happening
         //get the mouse cursor position at startup
         pos3 = e.clientX;
         pos4 = e.clientY;
@@ -23,7 +23,7 @@ function dragElement(elmnt) {
 
     function elementDrag(e) {
         e = e || window.event;
-        e.preventDefault();
+        // e.preventDefault();
         pos1 = pos3 - e.clientX;
         pos2 = pos4 - e.clientY;
         pos3 = e.clientX;

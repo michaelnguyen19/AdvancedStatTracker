@@ -31,40 +31,59 @@ function getMousePosition(canvas, event) {
     //________________________________________________________________
 
     //console.log(y/height)
+    var eventType = "2 pt";
+
 
     //Determine if shot is on right side or left
     if (scaledX < centerX) {
         //Determine if the shot location is 2pt or 3pt
         if ( (y / height) < 0.108 && (x/width) < 0.0747) {
             console.log("Right Corner 3pt");
+            eventType = "3 pt";
         }
         else if ( (y/height) > 0.89 && (x/width) < 0.0747) {
             console.log("Left Corner 3pt");
+            eventType = "3 pt";
         }
-        else if (dist_Left > 0.233 && (x / width) < 0.345 && (x / width) > 0.0748 && (y / height) < 0.376 && (y / height) > 0.108) {
+        else if (dist_Left > 0.233 && (x / width) < 0.345 && (x / width) > 0.0748 && (y / height) < 0.376) {
             console.log("Right Wing 3pt");
+            eventType = "3 pt";
         }
-        else if (dist_Left > 0.233 && (x / width) < 0.345 && (x / width) > 0.0748 && (y / height) < 0.376 && (y / height) > 0.108) {
+        else if (dist_Left > 0.233 && (x / width) < 0.345 && (x / width) > 0.0748 && (y / height) > 0.376 && (y / height) < 0.624) {
+            console.log("Center 3pt");
+            eventType = "3 pt";
+        }
+        else if (dist_Left > 0.233 && (x / width) < 0.345 && (x / width) > 0.0748 && (y / height) > 0.624) {
             console.log("Left Wing 3pt");
+            eventType = "3 pt";
+        }
+        else if (dist_Left < 0.233 && (x/width) < 0.06 && (y/height) > 0.108 && (y/height) < 0.4) {
+            console.log("Right Baseline 2 pt")
         }
         else if (dist_Left < 0.233) {
             console.log("2 point shot");
         }
         else {
             console.log("3 point shot");
+            eventType = "3 pt";
         }
     }
     else {
         if ( (y / height) < 0.104 || (y/height) > 0.89 ) {
             console.log("3 point shot");
+            eventType = "3 pt";
         }
         else if (dist_Right < 0.21) {
             console.log("2 point shot");
         }
         else {
             console.log("3 point shot");
+            eventType = "3 pt";
         }
     }
+
+    var select = document.getElementById("shotPoints");
+    select.value = eventType;
 
     //Specific Shot Locations for Left Side
     // if (scaledX < centerX) {
@@ -79,7 +98,7 @@ function getMousePosition(canvas, event) {
 
     //console.log("Distance: " + d);
     console.log(y / height);
-    console.log(x / width)
+    console.log(x / width);
 }
 
 let canvasElem = document.querySelector("canvas");
