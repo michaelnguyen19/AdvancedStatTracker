@@ -9,6 +9,10 @@ function getMousePosition(canvas, event) {
     let dist_Left = d[0];
     let dist_Right = d[1];
 
+    //Allows popup to access coordinates
+    document.getElementById('X-coordinate').textContent = x;
+    document.getElementById('Y-coordinate').textContent = y;
+
     //console.log("Distance Right: " + dist_Right);
     //console.log("Distance Left: " + dist_Left)
 
@@ -35,7 +39,7 @@ function getMousePosition(canvas, event) {
 
 
     //Determine if shot is on right side or left
-    if (scaledX < centerX) {
+    if (scaledX < centerX) { //Left Side
         //Determine if the shot location is 2pt or 3pt
         if ( (y / height) < 0.108 && (x/width) < 0.0747) {
             console.log("Right Corner 3pt");
@@ -59,6 +63,15 @@ function getMousePosition(canvas, event) {
         }
         else if (dist_Left < 0.233 && (x/width) < 0.06 && (y/height) > 0.108 && (y/height) < 0.4) {
             console.log("Right Baseline 2 pt")
+        }
+        else if (dist_Left < 0.233 && (x/width) < 0.06 && (y/height) < 0.89 && (y/height) > 0.6) {
+            console.log("Left Baseline 2 pt")
+        }
+        else if (dist_Left < 0.233 && (x/width) > 0.06 && (x/width) < 0.211 && (y/height) > 0.108 && (y/height) < 0.4) {
+            console.log("Right Wing Midrange 2pt")
+        }
+        else if (dist_Left < 0.233 && (x/width) > 0.1706 && (x/width) < 0.2216) {
+            console.log("Center Midrange 2pt");
         }
         else if (dist_Left < 0.233) {
             console.log("2 point shot");

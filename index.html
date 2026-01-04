@@ -58,13 +58,15 @@
           Welcome!
         </h2>
         <form id = "shotEvent">
-          <input id = "player" type="number"> <label for="player">player</label>
-
+          <label for="player">player</label> <input id = "player" type="number"> 
           <input type = "radio" name = "made/miss" value="1"><label for="made">made</label>
-          
           <input type = "radio" name = "made/miss" value="2"><label for="miss">miss</label>
+          
+          <br><br>
 
-          <input id = "defender" type="number"> <label for="defender">defender</label>
+          <label for="defender">defender</label> <input id = "defender" type="number"> 
+          
+          <br><br>
 
           <label for="shotPoints"> Shot Points </label>
 
@@ -73,10 +75,17 @@
             <option value="3 pt"> 3 Points </option>
           </select>
 
+          <br><br>
+
+          <p> X-coordinate: <span id="X-coordinate"> </span></p>
+          <p> Y-coordinate: <span id="Y-coordinate"> </span></p>
+
+          <br><br>
+
         </form>
-        <button>
-          Learn More
-        </button>
+        <!-- <button>
+          Submit
+        </button> -->
       </div>
     </div>
   </div>
