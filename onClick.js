@@ -70,7 +70,7 @@ function getMousePosition(canvas, event) {
         else if (dist_Left < 0.233 && (x/width) > 0.06 && (x/width) < 0.211 && (y/height) > 0.108 && (y/height) < 0.4) {
             console.log("Right Wing Midrange 2pt")
         }
-        else if (dist_Left < 0.233 && (x/width) > 0.1706 && (x/width) < 0.2216) {
+        else if (dist_Left < 0.233 && (x/width) > 0.1706 && (x/width) < 0.2216 && (x/width) > 0.171 && (y/height) > 0.4 && (y/height) < 0.6) {
             console.log("Center Midrange 2pt");
         }
         else if (dist_Left < 0.233) {
