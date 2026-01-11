@@ -59,3 +59,7 @@ select {
   display: block;
   z-index: 0;
 }
+
+table {
+  color: white;
+}

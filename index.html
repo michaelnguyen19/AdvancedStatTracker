@@ -57,7 +57,7 @@
         <h2>
           Welcome!
         </h2>
-        <form id = "shotEvent">
+        <form id = "shotEvent" onsubmit="saveData()">
           <label for="player">player</label> <input id = "player" type="number"> 
           <input type = "radio" name = "made/miss" value="1"><label for="made">made</label>
           <input type = "radio" name = "made/miss" value="2"><label for="miss">miss</label>
@@ -82,6 +82,8 @@
 
           <br><br>
 
+          <input type="submit">
+
         </form>
         <!-- <button>
           Submit
@@ -92,6 +94,23 @@
 
   <button id="OpenPopup" >
   </button>
+
+  <table id="data">
+    <tr>
+      <th>
+        name
+      </th>
+      <th>
+        shot
+      </th>
+      <th>
+        x-coord
+      </th>
+      <th>
+        y-coord
+      </th>
+    </tr>
+  </table>
 
   
 
