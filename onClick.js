@@ -161,12 +161,21 @@ function getDistance(x, y) {
 document.getElementById("shotEvent").addEventListener("submit", saveData);
 
 function saveData(event) {
-    if (event == null) {
-        return;
-    }
-    console.log(event);
+    //console.log(event);
     event.preventDefault();
     alert("The form was submitted")
+
+    const madeMiss = document.querySelector('input[name="made/miss"]:checked');
+    const madeMissValue = madeMiss.value
+
+    const player = document.getElementById("player").value;
+
+    const defender = document.getElementById("defender").value;
+
+    const shotPoints = document.getElementById("shotPoints").value;
+
+    var newRow = "<tr><td>" + player + "</td><td>" + shotPoints; //add x & y-coord and add more table elements
+
 }
 
 
