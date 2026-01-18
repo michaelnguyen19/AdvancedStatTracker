@@ -86,9 +86,9 @@ function getMousePosition(canvas, event) {
             console.log("Left Corner 3pt");
             eventType = "3 pt";
         }
-        else if() {
+        // else if() {
 
-        }
+        // }
         else if (dist_Right < 0.21) {
             console.log("2 point shot");
         }
@@ -161,6 +161,10 @@ function getDistance(x, y) {
 document.getElementById("shotEvent").addEventListener("submit", saveData);
 
 function saveData(event) {
+    if (event == null) {
+        return;
+    }
+    console.log(event);
     event.preventDefault();
     alert("The form was submitted")
 }
