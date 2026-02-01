@@ -59,12 +59,13 @@
         </h2> -->
         <form id = "shotEvent" >
           <label for="player">player</label> <input id = "player" type="number"> 
-          <input type = "radio" name = "made/miss" value="1"><label for="made">made</label>
-          <input type = "radio" name = "made/miss" value="2"><label for="miss">miss</label>
-          
+
+          <label for="defender">defender</label> <input id = "defender" type="number">
+
           <br><br>
 
-          <label for="defender">defender</label> <input id = "defender" type="number"> 
+          <input type = "radio" name = "made/miss" value="1"><label for="made">made</label>
+          <input type = "radio" name = "made/miss" value="2"><label for="miss">miss</label>
           
           <br><br>
 
@@ -79,12 +80,18 @@
 
           <label for="shotLocation"> Shot Location </label>
 
-          <select name="Location" id="shotPoints">
+          <select name="Location" id="shotLocation">
             <option value="Left Corner 3pt"> Left Corner 3pt </option>
             <option value="Left Wing 3pt"> Left Wing 3pt </option>
             <option value="Center 3pt"> Center 3pt </option>
             <option value="Right Wing 3pt"> Right Wing 3pt </option>
             <option value="Right Corner 3pt"> Right Corner 3pt </option>
+            <option value="Right Baseline 2pt"> Right Baseline 2pt </option>
+            <option value="Right Wing 2pt"> Right Wing 2pt </option>
+            <option value="Center Midrange 2pt"> Center Midrange 2pt </option>
+            <option value="Left Wing 2pt"> Left Wing 2pt </option>
+            <option value="Left Baseline 2pt"> Left Baseline 2pt </option>
+            <option value="Paint"> Paint </option>
           </select>
 
           <br><br>

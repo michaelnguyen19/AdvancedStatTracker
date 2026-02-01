@@ -36,7 +36,7 @@ function getMousePosition(canvas, event) {
 
     //console.log(y/height)
     var eventType = "2 pt";
-    var location = "Left Corner 3pt";
+    var location = "";
 
 
     //Determine if shot is on right side or left
@@ -63,19 +63,26 @@ function getMousePosition(canvas, event) {
             eventType = "3 pt";
         }
         else if (dist_Left < 0.233 && (x/width) < 0.06 && (y/height) > 0.108 && (y/height) < 0.4) {
+            location = "Right Baseline 2pt";
             console.log("Right Baseline 2 pt")
         }
         else if (dist_Left < 0.233 && (x/width) < 0.06 && (y/height) < 0.89 && (y/height) > 0.6) {
+            location = "Left Baseline 2pt";
             console.log("Left Baseline 2 pt")
         }
         else if (dist_Left < 0.233 && (x/width) > 0.06 && (x/width) < 0.211 && (y/height) > 0.108 && (y/height) < 0.4) {
+            location = "Right Wing 2pt";
             console.log("Right Wing Midrange 2pt")
         }
         else if (dist_Left < 0.233 && (x/width) > 0.1706 && (x/width) < 0.2216 && (x/width) > 0.171 && (y/height) > 0.4 && (y/height) < 0.6) {
+            location = "Center Midrange 2pt";
             console.log("Center Midrange 2pt");
         }
-        else if (dist_Left < 0.233) {
-            console.log("2 point shot");
+        else if (dist_Left < 0.233 && (x/width) > 0.06 && (x/width) < 0.211 && (y/height) > 0.6 && (y/height) < 0.89) {
+            location = "Left Wing 2pt";
+        }
+        else if (dist_Left < 0.233 && (x/width) > 0.01 && (x/width) < 0.1706 && (y/height) > 0.4 && (y/height) < 0.6) {
+            location = "Paint";
         }
         else {
             console.log("3 point shot");
@@ -103,7 +110,7 @@ function getMousePosition(canvas, event) {
     select.value = eventType;
 
     var select2 = document.getElementById("shotLocation");
-    select2.value2 = location;
+    select2.value = location;
 
     //Specific Shot Locations for Left Side
     // if (scaledX < centerX) {
@@ -117,8 +124,8 @@ function getMousePosition(canvas, event) {
         
 
     //console.log("Distance: " + d);
-    console.log(y / height);
-    console.log(x / width);
+    console.log("y/height: " + y / height);
+    console.log("x / width: " + x / width);
 }
 
 let canvasElem = document.querySelector("canvas");

@@ -32,8 +32,13 @@ h1 {
   position: fixed;
   left: 100px;
   top: 200px;
-  width: 170px;
-  height: 300px;
+  width: 300px;
+  height: 330px;
+}
+
+.player, .defender {
+  width: 10px;
+  /* display: inline-block; */
 }
 
 #close-button {
