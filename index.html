@@ -54,9 +54,9 @@
     <div class="popup" id="myPopup">
       <span class="close-button" id="closePopup">&times;</span>
       <div class="popup-content"> 
-        <h2>
+        <!-- <h2>
           Welcome!
-        </h2>
+        </h2> -->
         <form id = "shotEvent" >
           <label for="player">player</label> <input id = "player" type="number"> 
           <input type = "radio" name = "made/miss" value="1"><label for="made">made</label>
@@ -73,6 +73,18 @@
           <select name="Points" id="shotPoints">   
             <option value="2 pt"> 2 Points </option>
             <option value="3 pt"> 3 Points </option>
+          </select>
+
+          <br><br>
+
+          <label for="shotLocation"> Shot Location </label>
+
+          <select name="Location" id="shotPoints">
+            <option value="Left Corner 3pt"> Left Corner 3pt </option>
+            <option value="Left Wing 3pt"> Left Wing 3pt </option>
+            <option value="Center 3pt"> Center 3pt </option>
+            <option value="Right Wing 3pt"> Right Wing 3pt </option>
+            <option value="Right Corner 3pt"> Right Corner 3pt </option>
           </select>
 
           <br><br>

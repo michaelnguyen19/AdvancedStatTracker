@@ -36,29 +36,30 @@ function getMousePosition(canvas, event) {
 
     //console.log(y/height)
     var eventType = "2 pt";
+    var location = "Left Corner 3pt";
 
 
     //Determine if shot is on right side or left
     if (scaledX < centerX) { //Left Side
         //Determine if the shot location is 2pt or 3pt
         if ( (y / height) < 0.108 && (x/width) < 0.0747) {
-            console.log("Right Corner 3pt");
+            location = "Right Corner 3pt";
             eventType = "3 pt";
         }
         else if ( (y/height) > 0.89 && (x/width) < 0.0747) {
-            console.log("Left Corner 3pt");
+            location = "Left Corner 3pt";
             eventType = "3 pt";
         }
         else if (dist_Left > 0.233 && (x / width) < 0.345 && (x / width) > 0.0748 && (y / height) < 0.376) {
-            console.log("Right Wing 3pt");
+            location = "Right Wing 3pt";
             eventType = "3 pt";
         }
         else if (dist_Left > 0.233 && (x / width) < 0.345 && (x / width) > 0.0748 && (y / height) > 0.376 && (y / height) < 0.624) {
-            console.log("Center 3pt");
+            location = "Center 3pt";
             eventType = "3 pt";
         }
         else if (dist_Left > 0.233 && (x / width) < 0.345 && (x / width) > 0.0748 && (y / height) > 0.624) {
-            console.log("Left Wing 3pt");
+            location = "Left Wing 3pt";
             eventType = "3 pt";
         }
         else if (dist_Left < 0.233 && (x/width) < 0.06 && (y/height) > 0.108 && (y/height) < 0.4) {
@@ -100,6 +101,9 @@ function getMousePosition(canvas, event) {
 
     var select = document.getElementById("shotPoints");
     select.value = eventType;
+
+    var select2 = document.getElementById("shotLocation");
+    select2.value2 = location;
 
     //Specific Shot Locations for Left Side
     // if (scaledX < centerX) {
