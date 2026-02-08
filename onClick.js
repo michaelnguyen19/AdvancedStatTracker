@@ -90,10 +90,15 @@ function getMousePosition(canvas, event) {
         }
     }
     else {
-        if ( (y / height) < 0.108 && (x/width) > 0.9228) {
+        if ( dist_Right > 0.21 && (y / height) < 0.108 && (x/width) > 0.9228) {
             console.log("Left Corner 3pt");
             eventType = "3 pt";
         }
+        else if ( dist_Right > 0.21 && (y/height) > 0.89 && (x/width) > 0.9228) {
+            console.log("Right Corner 3pt");
+            eventType = "3pt"
+        }
+        //else if ( (dist_Right > 0.21 && ))
         // else if() {
 
         // }
