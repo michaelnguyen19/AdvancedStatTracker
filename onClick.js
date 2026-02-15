@@ -89,14 +89,23 @@ function getMousePosition(canvas, event) {
             eventType = "3 pt";
         }
     }
-    else {
-        if ( dist_Right > 0.21 && (y / height) < 0.108 && (x/width) > 0.9228) {
+    else { //Right Side
+        if ( dist_Right > 0.208 && (y / height) < 0.108 && (x/width) >= 0.9228) {
             console.log("Left Corner 3pt");
             eventType = "3 pt";
         }
-        else if ( dist_Right > 0.21 && (y/height) > 0.89 && (x/width) > 0.9228) {
+        else if ( dist_Right > 0.208 && (y/height) > 0.89 && (x/width) >= 0.9228) {
             console.log("Right Corner 3pt");
             eventType = "3pt"
+        }
+        else if ( dist_Right > 0.208 && (x/width) < 0.9228 && (x/width) > 0.655 & (y/height) < 0.376) {
+            console.log("Left Wing 3pt");
+        }
+        else if (dist_Right > 0.208 && (x/width) < 0.9228 && (x/width) > 0.655 & (y/height) > 0.624) {
+            console.log("Right Wing 3pt");
+        }
+        else if (dist_Right > 0.208 & (x/width) < 0.78 && (x/width) > 0.655 & (y/height) > 0.376 && (y/height) < 0.624) {
+            console.log("Center 3pt");
         }
         //else if ( (dist_Right > 0.21 && ))
         // else if() {
@@ -131,6 +140,8 @@ function getMousePosition(canvas, event) {
     //console.log("Distance: " + d);
     console.log("y/height: " + y / height);
     console.log("x / width: " + x / width);
+    console.log("Dist_right: " + dist_Right);
+    console.log("Dist_left: " + dist_Left);
 }
 
 let canvasElem = document.querySelector("canvas");
