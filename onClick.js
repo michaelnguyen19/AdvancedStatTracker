@@ -104,8 +104,26 @@ function getMousePosition(canvas, event) {
         else if (dist_Right > 0.208 && (x/width) < 0.9228 && (x/width) > 0.655 & (y/height) > 0.624) {
             console.log("Right Wing 3pt");
         }
-        else if (dist_Right > 0.208 & (x/width) < 0.78 && (x/width) > 0.655 & (y/height) > 0.376 && (y/height) < 0.624) {
+        else if (dist_Right > 0.208 && (x/width) < 0.78 && (x/width) > 0.655 & (y/height) > 0.376 && (y/height) < 0.624) {
             console.log("Center 3pt");
+        }
+        else if (dist_Right < 0.208 && (y/height) > 0.108 && (y/height) < 0.4 && (x/width) >= 0.9228) {
+            console.log("Left Baseline 2pt");
+        }
+        else if (dist_Right < 0.208 && (y/height) < 0.89 && (y/height) > 0.6 && (x/width) >= 0.9228) {
+            console.log("Right Baseline 2pt");
+        }
+        else if (dist_Right < 0.208 && (y/height) > 0.108 && (y/height) < 0.4 && (x/width) < 0.9228 && (x/width) > 0.78) {
+            console.log("Left Wing 2pt");
+        }
+        else if (dist_Right < 0.208 && (y/height) < 0.89 && (y/height) > 0.6 && (x/width) < 0.9228 && (x/width) > 0.78) {
+            console.log("Right Wing 2pt");
+        }
+        else if (dist_Right < 0.208 && (y/height) > 0.4 && (y/height) < 0.6 && (x/width) > 0.78 && (x/width) < 0.829) {
+            console.log("Center Midrange");
+        }
+        else if (dist_Right < 0.208 && (y/height) > 0.4 && (y/height) < 0.6 && (x/width) < 0.99 && (x/width) > 0.829) {
+            console.log("Paint");
         }
         //else if ( (dist_Right > 0.21 && ))
         // else if() {
