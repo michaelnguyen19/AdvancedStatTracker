@@ -92,38 +92,52 @@ function getMousePosition(canvas, event) {
     else { //Right Side
         if ( dist_Right > 0.208 && (y / height) < 0.108 && (x/width) >= 0.9228) {
             console.log("Left Corner 3pt");
+            location = "Left Corner 3pt";
             eventType = "3 pt";
         }
         else if ( dist_Right > 0.208 && (y/height) > 0.89 && (x/width) >= 0.9228) {
             console.log("Right Corner 3pt");
+            location = "Right Corner 3pt";
             eventType = "3pt"
         }
         else if ( dist_Right > 0.208 && (x/width) < 0.9228 && (x/width) > 0.655 & (y/height) < 0.376) {
             console.log("Left Wing 3pt");
+            location = "Left Wing 3pt";
+            eventType = "3 pt";
         }
         else if (dist_Right > 0.208 && (x/width) < 0.9228 && (x/width) > 0.655 & (y/height) > 0.624) {
             console.log("Right Wing 3pt");
+            location = "Right Wing 3pt";
+            eventType = "3 pt";
         }
         else if (dist_Right > 0.208 && (x/width) < 0.78 && (x/width) > 0.655 & (y/height) > 0.376 && (y/height) < 0.624) {
             console.log("Center 3pt");
+            location = "Center 3pt";
+            eventType = "3 pt";
         }
         else if (dist_Right < 0.208 && (y/height) > 0.108 && (y/height) < 0.4 && (x/width) >= 0.9228) {
             console.log("Left Baseline 2pt");
+            location = "Left Baseline 2pt";
         }
         else if (dist_Right < 0.208 && (y/height) < 0.89 && (y/height) > 0.6 && (x/width) >= 0.9228) {
             console.log("Right Baseline 2pt");
+            location = "Right Baseline 2pt";
         }
         else if (dist_Right < 0.208 && (y/height) > 0.108 && (y/height) < 0.4 && (x/width) < 0.9228 && (x/width) > 0.78) {
             console.log("Left Wing 2pt");
+            location = "Left Wing 2pt";
         }
         else if (dist_Right < 0.208 && (y/height) < 0.89 && (y/height) > 0.6 && (x/width) < 0.9228 && (x/width) > 0.78) {
             console.log("Right Wing 2pt");
+            location = "Right Wing 2pt";
         }
         else if (dist_Right < 0.208 && (y/height) > 0.4 && (y/height) < 0.6 && (x/width) > 0.78 && (x/width) < 0.829) {
             console.log("Center Midrange");
+            location = "Center Midrange 2pt";
         }
         else if (dist_Right < 0.208 && (y/height) > 0.4 && (y/height) < 0.6 && (x/width) < 0.99 && (x/width) > 0.829) {
             console.log("Paint");
+            location = "Paint";
         }
         //else if ( (dist_Right > 0.21 && ))
         // else if() {
@@ -219,7 +233,13 @@ function saveData(event) {
 
     const shotPoints = document.getElementById("shotPoints").value;
 
-    var newRow = "<tr><td>" + player + "</td><td>" + shotPoints; //add x & y-coord and add more table elements
+    const shotLocation = document.getElementById("shotLocation").value;
+
+    var newRow = "<tr><td>" + player //add x & y-coord and add more table elements
+               + "</td><td>" + defender
+               + "</td><td>" + shotPoints
+               + "</td><td>" + shotLocation; 
+
 
 }
 
