@@ -235,11 +235,19 @@ function saveData(event) {
 
     const shotLocation = document.getElementById("shotLocation").value;
 
+    const x_coord = document.getElementById("X-coordinate").textContent;
+
+    const y_coord = document.getElementById("Y-coordinate").textContent;
+
     var newRow = "<tr><td>" + player //add x & y-coord and add more table elements
                + "</td><td>" + defender
                + "</td><td>" + shotPoints
-               + "</td><td>" + shotLocation; 
+               + "</td><td>" + shotLocation
+               + "</td><td>" + x_coord
+               + "</td><td>" + y_coord
+               + "</td></tr>"; 
 
+    document.getElementById("data").innerHTML += newRow;
 
 }
 

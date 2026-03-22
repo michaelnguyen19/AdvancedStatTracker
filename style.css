@@ -41,6 +41,10 @@ h1 {
   /* display: inline-block; */
 }
 
+#X-coordinate, #Y-coordinate {
+  display: none;
+}
+
 #close-button {
   position: absolute;
   top: 10px;
