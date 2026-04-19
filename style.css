@@ -53,6 +53,20 @@ h1 {
 
 }
 
+.scoreboard {
+  display: flex;
+  align-items: center;
+  background: red;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 0 auto 20px;
+  max-width: 600px;
+}
+
+.scoreboard .team {
+  display: flex
+}
+
 /* Draggable Settings */
 #mydivheader {
   padding: 10px;
