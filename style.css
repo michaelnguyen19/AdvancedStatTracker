@@ -64,8 +64,36 @@ h1 {
 }
 
 .scoreboard .team {
-  display: flex
+  display: flex;
+  flex-direction: column;   
+  align-items: center;
+  gap: 5px;
 }
+
+.scoreboard .teamName {
+  color:blueviolet;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.scoreboard .score {
+  color: black;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.scoreboard .timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 0 20 px;
+  border-left: 1px solid #333;
+  border-right: 1px solid #333;
+}
+
+
 
 /* Draggable Settings */
 #mydivheader {
