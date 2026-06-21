@@ -225,7 +225,10 @@ function saveData(event) {
     alert("The form was submitted")
 
     const madeMiss = document.querySelector('input[name="made/miss"]:checked');
-    const madeMissValue = madeMiss.value
+    const homeAway = document.querySelector('input[name="home/away"]:checked');
+    const madeMissValue = madeMiss.value;
+    const homeAwayValue = homeAway.value;
+    console.log(homeAwayValue);
 
     const player = document.getElementById("player").value;
 
@@ -249,6 +252,34 @@ function saveData(event) {
 
     document.getElementById("data").innerHTML += newRow;
 
+    if (homeAwayValue == 1 && madeMissValue == "1") {
+        let score = parseInt(document.getElementById("homeScore").innerHTML);
+        if (shotPoints == "3 pt") {
+            score += 3;
+        }
+        else if (shotPoints == "2 pt") {
+            score += 2;
+        }
+        else if (shotPoints == "1 pt") {
+            score += 1;
+        }
+        
+        document.getElementById("homeScore").innerHTML = score;
+    }
+    if (homeAwayValue == 1 && madeMissValue == "1") {
+        let score = parseInt(document.getElementById("homeScore").innerHTML);
+        if (shotPoints == "3 pt") {
+            score += 3;
+        }
+        else if (shotPoints == "2 pt") {
+            score += 2;
+        }
+        else if (shotPoints == "1 pt") {
+            score += 1;
+        }
+        
+        document.getElementById("homeScore").innerHTML = score;
+    }
 }
 
 
